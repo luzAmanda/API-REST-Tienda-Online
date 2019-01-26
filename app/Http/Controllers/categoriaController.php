@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+
 use Auth;
 
 class categoriaController extends Controller
@@ -48,9 +49,10 @@ class categoriaController extends Controller
     public function show()
     {
    // $categoria= Categoria::all();
-   $categoria= Categoria::all('cat_id','cat_codigo','cat_codigop','cat_nombre');
+   //$categoria= Categoria::all('cat_id','cat_codigo','cat_codigop','cat_nombre');
+    $cats = Categoria::with('productos')->get();
     //return $categoria->toJson();
-    return json_decode($categoria);
+    return json_decode($cats);
     }
 
     /**
