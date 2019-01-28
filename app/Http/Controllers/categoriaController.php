@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+Use App\Producto;
 
 use Auth;
 
@@ -50,9 +51,9 @@ class categoriaController extends Controller
     {
    // $categoria= Categoria::all();
    //$categoria= Categoria::all('cat_id','cat_codigo','cat_codigop','cat_nombre');
-    $cats = Categoria::with('productos')->get();
+   $prods = Producto::with('categoria')->get();
     //return $categoria->toJson();
-    return json_decode($cats);
+    return json_decode($prods);
     }
 
     /**
