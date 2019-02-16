@@ -16,7 +16,7 @@ class Producto extends Model
 
     protected $fillable = ['pro_codigo','cat_id','pro_nombre','pro_descripcion','pro_caracteristicas','pro_precio','pro_costo'];
 
-    protected $hidden = ['pro_id'];
+   // protected $hidden = ['pro_id'];
 
     public function categoria()
     {
